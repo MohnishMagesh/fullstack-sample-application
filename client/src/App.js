@@ -5,20 +5,14 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 function App() {
   return (
-    <div>
-        <Router>
+    <Router>
+      <div>
           <Switch>
-            {/* <Route exact path="/" element={<UserList/>} /> */}
-            <Route path="/">
-              <UserList/>
-            </Route>
-            <Route path="/:userId">
-              <UserDetail/>
-            </Route>
-            {/* <Route path="/usernames/userdetails" component={UserDetail} /> */}
+            <Route path="/users" exact component={UserList}/>
+            <Route path="/users/:userId" exact component={UserDetail}/>
           </Switch>
-        </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 
