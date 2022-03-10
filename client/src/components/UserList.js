@@ -5,7 +5,7 @@ export default function UserList() {
     const [userNames, setUserNames] = useState(null);
 
     useEffect(() => {
-        fetch("/users")
+        fetch("https://jsonplaceholder.typicode.com/users")
             .then(
                 response => response.json()
             )
@@ -20,7 +20,11 @@ export default function UserList() {
     return (
         <div>
             {userNames && userNames.map((data, key) => (
-                <p key={key}>{data.name}</p>
+                <p>
+                    <span key={key}>{data.id}</span>
+                    <span key={key}>{data.name}</span>
+                    <button>User Profile</button>
+                </p>
             ))}
         </div>
     );
