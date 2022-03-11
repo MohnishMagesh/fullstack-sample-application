@@ -107,12 +107,17 @@ export default function UserDetail(props) {
                                 <Panel header={post.title} key={index} style={{padding: "10px"}}>
                                     <p>{post.body}</p>
                                     {/* create comments components here */}
-                                    <PostComments postid={post.id}/>
+                                    <PostComments postid={post.id} />
                                     <div style={{marginTop: "10px"}}>
                                         <Button onClick={showModal} type="primary" style={{marginRight: "10px"}}>
                                             Edit
                                         </Button>
-                                        <Modal title="Edit Post" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                                        <Modal 
+                                            title="Edit Post" 
+                                            visible={isModalVisible} 
+                                            onCancel={handleCancel}
+                                            footer = {null}
+                                        >
                                             <Form
                                                 name="basic"
                                                 labelCol={{ span: 8 }}
@@ -151,7 +156,7 @@ export default function UserDetail(props) {
                                                 </Form.Item>
 
                                                 <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                                                    <Button type="primary" htmlType="submit">
+                                                    <Button onClick={handleOk} type="primary" htmlType="submit">
                                                         Edit post
                                                     </Button>
                                                 </Form.Item>

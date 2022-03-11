@@ -78,7 +78,13 @@ export default function PostComments(props) {
                 <Button onClick={showModal} type="primary" style={{marginRight: "10px"}} ghost>
                     Add Comment
                 </Button>
-                <Modal title="Edit Post" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                <Modal 
+                    title="Edit Post" 
+                    visible={isModalVisible} 
+                    // onOk={handleOk} 
+                    onCancel={handleCancel}
+                    footer = {null}
+                >
                     <Form
                         name="basic"
                         labelCol={{ span: 8 }}
