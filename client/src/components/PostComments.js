@@ -75,7 +75,7 @@ export default function PostComments(props) {
                         </div>
                     ))}
                 </Collapse>
-                <Button onClick={showModal} type="primary" style={{marginRight: "10px"}}>
+                <Button onClick={showModal} type="primary" style={{marginRight: "10px"}} ghost>
                     Add Comment
                 </Button>
                 <Modal title="Edit Post" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
