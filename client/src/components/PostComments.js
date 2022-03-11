@@ -21,7 +21,7 @@ export default function PostComments(props) {
                     setComments(comms);
                 }
             )
-    }, [])
+    }, []);
 
     return (
         <Collapse>

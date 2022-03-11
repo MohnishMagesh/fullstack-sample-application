@@ -18,7 +18,7 @@ export default function Albums(props) {
                     setAlbums(albs);
                 }
             )
-    }, [])
+    }, []);
 
     return (
         <Collapse accordion>

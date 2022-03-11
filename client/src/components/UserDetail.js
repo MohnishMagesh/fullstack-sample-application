@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 import PostComments from "./PostComments";
 import Albums from "./Albums";
 
-import { Collapse } from 'antd';
-
+import { Button } from 'antd';
 import { Descriptions, Badge } from 'antd';
+import { Collapse } from 'antd';
 
 const { Panel } = Collapse;
 
@@ -24,7 +24,7 @@ export default function UserDetail(props) {
                     setUserData(data);
                 }
             )
-    }, [])
+    }, []);
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
@@ -36,7 +36,12 @@ export default function UserDetail(props) {
                     setPostData(posts);
                 }
             )
-    }, [])
+    }, []);
+
+    const deletePost = (postID) => {
+        setPostData(postData.filter(post => post.id !== postID));
+        console.log(postData);
+    };
 
     return (
         <div>
@@ -61,6 +66,14 @@ export default function UserDetail(props) {
                                     <p>{post.body}</p>
                                     {/* create comments components here */}
                                     <PostComments postid={post.id}/>
+                                    <div style={{marginTop: "10px"}}>
+                                        <Button type="primary" style={{marginRight: "10px"}}>
+                                            Edit
+                                        </Button>
+                                        <Button onClick={() => deletePost(post.id)} type="primary" danger>
+                                            Delete
+                                        </Button>
+                                    </div>
                                 </Panel>
                             ))}
                         </Collapse>
