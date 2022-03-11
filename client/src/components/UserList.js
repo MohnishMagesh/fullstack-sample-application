@@ -3,13 +3,6 @@ import { Link } from "react-router-dom";
 import { List, Avatar } from 'antd';
 import { Popover, Button } from 'antd';
 
-const content = (userObj) => (
-  <div>
-    <p>{userObj.username}</p>
-    <p>{userObj.email}</p>
-  </div>
-);
-
 export default function UserList() {
 
     const [userNames, setUserNames] = useState(null);
@@ -27,17 +20,20 @@ export default function UserList() {
             )
     }, []);
 
-    const userInformation = () => {
-
-    }
+    const content = (userObj) => (
+        <div>
+          <p>{userObj.username}</p>
+          <p>{userObj.email}</p>
+        </div>
+    );
 
     return (
         <div>
-            <div style={{margin: "20px", display: "flex", alignItems: "center"}}>
+            <div style={{position: "absolute", margin: "20px", display: "flex", alignItems: "center", top: "40%"}}>
                 {userNames && userNames.map((user, key) => (
                     <Link to={`/users/${user.id}`}>
                         <Popover content={content(user)} title="Info" key={key} style={{border: "none"}}>
-                            <Button>{user.name}</Button>
+                            <Button style={{marginRight: "4px"}}>{user.name}</Button>
                         </Popover>
                     </Link>
                 ))}
