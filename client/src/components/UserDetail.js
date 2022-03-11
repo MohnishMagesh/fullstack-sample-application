@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import PostComments from "./PostComments";
 import Albums from "./Albums";
 
+import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
+
 import { Form, Input } from 'antd';
 import { Modal } from 'antd';
 import { Button } from 'antd';
@@ -97,7 +99,10 @@ export default function UserDetail(props) {
             <div style={{padding: "20px"}}>
                 <Collapse accordion>
                     <Panel header="All posts">
-                        <Collapse accordion>
+                        <Collapse 
+                            accordion
+                            expandIcon={({ isActive }) => isActive ? <MinusOutlined /> : <PlusOutlined />}
+                        >
                             {postData && postData.map((post, index) => (
                                 <Panel header={post.title} key={index} style={{padding: "10px"}}>
                                     <p>{post.body}</p>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 
-import { RightCircleOutlined } from "@ant-design/icons";
 import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
 
 import { Modal } from 'antd';
