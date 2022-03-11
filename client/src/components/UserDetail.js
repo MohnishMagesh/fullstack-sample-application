@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import PostComments from "./PostComments";
+import Albums from "./Albums";
 
 import { Collapse } from 'antd';
 
@@ -39,12 +40,7 @@ export default function UserDetail(props) {
 
     return (
         <div>
-            {/* <div>
-                <h2>{userData && userData.name}</h2>
-                <p>{userData && userData.email}</p>
-                <p>{userData && userData.phone}</p>
-                <p>{userData && userData.website}</p>
-            </div> */}
+            {/* user information */}
             <div style={{margin: "20px"}}>
                 <Descriptions title="User Info" bordered>
                     <Descriptions.Item label="Name">{userData && userData.name}</Descriptions.Item>
@@ -56,7 +52,7 @@ export default function UserDetail(props) {
                 </Descriptions>
             </div>
             {/* show posts */}
-            <div style={{padding: "10px"}}>
+            <div style={{padding: "20px"}}>
                 <Collapse accordion>
                     <Panel header="All posts">
                         <Collapse accordion>
@@ -70,6 +66,10 @@ export default function UserDetail(props) {
                         </Collapse>
                     </Panel>
                 </Collapse>
+            </div>
+            {/* show albums in collapsable window */}
+            <div style={{padding: "20px"}}>
+                <Albums userID={userId}/>
             </div>
         </div>
     );

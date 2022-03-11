@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 
+import { Comment, Tooltip, Avatar } from 'antd';
+
 import { Collapse } from 'antd';
 
 const { Panel } = Collapse;
@@ -26,9 +28,10 @@ export default function PostComments(props) {
             <Panel header="Comments">
                 <Collapse accordion>
                     {comments && comments.map((comment, index) => (
-                        <Panel header={comment.name} key={index} style={{padding: "10px"}}>
+                        <div style={{margin: "8px"}}>
+                            <h5>{comment.name}</h5>
                             <p>{comment.body}</p>
-                        </Panel>
+                        </div>
                     ))}
                 </Collapse>
             </Panel>
