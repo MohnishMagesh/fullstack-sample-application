@@ -26,7 +26,7 @@ export default function Albums(props) {
             <Panel header="All albums">
             {albums && albums.map((album, index) => (
                 <Link to={`/users/${props.userID}/album/${album.id}`}>
-                    <h4>{album.title}</h4>
+                    <h3 style={{color: "grey"}}>{album.title}</h3>
                 </Link>
             ))}
             </Panel>
