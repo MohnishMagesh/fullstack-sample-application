@@ -70,7 +70,7 @@ export default function PostComments(props) {
                 >
                     {comments && comments.map((comment, index) => (
                         <div style={{margin: "8px"}}>
-                            <h5>{comment.name}</h5>
+                            <h5 style={{fontStyle: "italic"}}>{comment.name}</h5>
                             <p>{comment.body}</p>
                         </div>
                     ))}
