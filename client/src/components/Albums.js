@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { Collapse } from 'antd';
 
@@ -24,7 +25,9 @@ export default function Albums(props) {
         <Collapse accordion>
             <Panel header="All albums">
             {albums && albums.map((album, index) => (
-                <h4>{album.title}</h4>
+                <Link to={`/users/${props.userID}/album/${album.id}`}>
+                    <h4>{album.title}</h4>
+                </Link>
             ))}
             </Panel>
         </Collapse>
