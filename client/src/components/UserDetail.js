@@ -4,6 +4,8 @@ import PostComments from "./PostComments";
 
 import { Collapse } from 'antd';
 
+import { Descriptions, Badge } from 'antd';
+
 const { Panel } = Collapse;
 
 export default function UserDetail(props) {
@@ -37,11 +39,21 @@ export default function UserDetail(props) {
 
     return (
         <div>
-            <div>
+            {/* <div>
                 <h2>{userData && userData.name}</h2>
                 <p>{userData && userData.email}</p>
                 <p>{userData && userData.phone}</p>
                 <p>{userData && userData.website}</p>
+            </div> */}
+            <div style={{margin: "20px"}}>
+                <Descriptions title="User Info" bordered>
+                    <Descriptions.Item label="Name">{userData && userData.name}</Descriptions.Item>
+                    <Descriptions.Item label="Username">{userData && userData.username}</Descriptions.Item>
+                    <Descriptions.Item label="Email">{userData && userData.email}</Descriptions.Item>
+                    <Descriptions.Item label="Phone">{userData && userData.phone}</Descriptions.Item>
+                    <Descriptions.Item label="Website">{userData && userData.website}</Descriptions.Item>
+                    <Descriptions.Item label="Company">{userData && userData.company["name"]}</Descriptions.Item>
+                </Descriptions>
             </div>
             {/* show posts */}
             <div style={{padding: "10px"}}>

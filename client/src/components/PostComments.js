@@ -22,12 +22,16 @@ export default function PostComments(props) {
     }, [])
 
     return (
-        <Collapse accordion>
-            {comments && comments.map((comment, index) => (
-                <Panel header={comment.name} key={index} style={{padding: "10px"}}>
-                    <p>{comment.body}</p>
-                </Panel>
-            ))}
+        <Collapse>
+            <Panel header="Comments">
+                <Collapse accordion>
+                    {comments && comments.map((comment, index) => (
+                        <Panel header={comment.name} key={index} style={{padding: "10px"}}>
+                            <p>{comment.body}</p>
+                        </Panel>
+                    ))}
+                </Collapse>
+            </Panel>
         </Collapse>
     );
 }
