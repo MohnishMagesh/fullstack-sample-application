@@ -8,6 +8,7 @@ function App() {
     <Router>
       <div>
           <Switch>
+            <Route path="/" exact component={UserList}/>
             <Route path="/users" exact component={UserList}/>
             <Route path="/users/:userId" exact component={UserDetail}/>
           </Switch>
