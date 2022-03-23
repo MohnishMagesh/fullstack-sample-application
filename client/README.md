@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# REST API demonstration using fetch
 
 This app demonstrates the use of rest api using fetch and dynamically shows information from https://jsonplaceholder.typicode.com/
 
